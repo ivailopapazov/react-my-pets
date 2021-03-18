@@ -1,0 +1,7 @@
+@import 'typography.css';
+@import 'forms.css';
+@import 'navigation.css';
+@import 'all.css';
+
+
+background: linear-gradient(rgba(250, 248, 248, 0.2), rgba(25, 167, 173, 0.2)), url(../img/We-need-to-talk-about-pets.jpg) no-repeat center;

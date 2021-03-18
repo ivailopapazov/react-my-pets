@@ -1,38 +1,466 @@
-.App {
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif+Caption:400i|PT+Serif:400,400i,700,700i');
+html {
+	font: 12px/1.5 "PT Sans", "PT Serif Caption", "PT Serif";	
+}
+
+@media screen and (min-width: 500px) {
+	html { 
+		font-size: 14px;
+	 }
+}
+
+@media screen and (min-width: 700px) {
+	html { 
+		font-size: 16px;
+	 }
+}
+
+@media screen and (min-width: 1600px) {
+	html { 
+		font-size: 18px;
+	 }
+}
+
+body, table, th, td, form, input, textarea, option, select {
+	font: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1.2;	
+}
+
+h1 { font-size: 2.2rem; }
+h2 { font-size: 2.0rem; }
+h3 { font-size: 1.8rem; }
+h4 { font-size: 1.6rem; }
+h5 { font-size: 1.4rem; }
+h6 { font-size: 1.2rem; }
+
+ul, ol {
+	padding-bottom: 1.5em;
+}
+
+ul, ol {
+	padding-left: 2em;
+}
+
+li {
+	list-style-position: inside;
+}
+blockquote {
+	width: 80%;
+	margin: 0 auto;
+	border-left: 4px solid #DDD;
+	font-style: italic;	
+	padding: 1rem 2rem;
+	position: relative;
+}
+
+body {
+	background: #FFF;
+	padding: 1rem;
+}
+
+form {
+	max-width: 30rem;
+}
+
+form,
+form fieldset,
+form legend,
+form label,
+form input,
+form textarea,
+form select {
+	display: block;
+}
+
+form fieldset,
+form legend {
+	border: 1px solid #666;
+	background: #F9F9F9;
+	border-radius: 0.3rem;
+	box-shadow: 0 0 1rem 0.1rem rgba(0, 0, 0, 0.1);
+}
+
+form fieldset {
+	padding: 2.5em 2em 2em 2em;
+	position: relative;
+}
+
+form legend {
+	width: 30%;
+	padding: 0.5rem 1rem;
+	left: -1px;
+	top: -1.4rem;
+	position: absolute;
+}
+
+form label {
+	font-weight: bold;
+}
+
+.field {}
+
+
+.field .input {
+	display: flex;
+	position: relative;
+	align-items: center;
+}
+
+.field .input:after {
+	display: block;
+	content: '';
+}
+
+
+.field .input input {
+	border: none;
+	flex: 1 1 auto;
+	padding: 0.8rem;
+	outline: none;
+	background: transparent;
+	z-index: 2;
+	order: 2;
+}
+
+.field .input .fas {
+	z-index: 2;
+	position: relative;
+	padding: 0 0 0 0.8rem;
+	font-size: 0.9em;
+	order: 1;
+}
+
+.field .input input+.actions {
+	display: block;
+	background: #FFF;
+	border: 1px solid #CCC;
+	border-radius: 0.3rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+}
+
+.field .input input:focus+.actions {
+	border-color: #090;
+}
+
+.field .input input:focus+.actions+.fas {
+	color: #090;
+}
+
+form textarea {
+	border-radius: 0.5rem;
+	padding: 0.8rem;
+}
+
+form textarea:focus {
+	outline: none;
+	border-color: #090;
+}
+
+.description {
+	width: 17rem;
+	height: 10vh;
+	padding: 2rem;
+	overflow: auto;
+}
+
+nav.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-self: center;  
+  letter-spacing: 0.05rem;
+  background: #234465;
+  padding: 0.8rem 1rem;
+  color: white;
+}
+#site-header > nav > section.navbar-dashboard > a{
+    list-style: none;
+    text-decoration: none;
+    align-self: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+    
+}
+#site-header > nav > section.navbar-dashboard > form > input[type="text"],
+#site-header > nav > section.navbar-anonymous > ul > li:nth-child(1) > a,
+#site-header > nav > section.navbar-user > ul > li:nth-child(1),
+#site-header > nav > section.navbar-dashboard > ul > li:nth-child(1) > a{
+    margin-right: 0.5rem;
+
+}
+
+
+nav.navbar ul {
+  background: transparent;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  margin: 0;
+}
+nav.navbar ul li {
+  display: block;
+  list-style: none outside;
+  position: relative;
+}
+nav.navbar ul li a {
+  display: block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  text-decoration: none;
+  font-weight: bold;
+  background: cadetblue;
+  color: rgb(255, 255, 255);
+}
+.button:hover,
+nav.navbar ul li a:hover,
+nav.navbar ul li:hover > a {
+  background: rgb(248, 215, 107);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+
+
+.dashboard nav{
+    background: transparent;
+}
+.navbar-dashboard{
+    display: flex;
+    justify-content: space-between;    
+    width: 100vw;
+}
+.navbar .first-bar{
+    display: flex;
+    align-items: center;
+}
+.navbar .first-bar a{
+    color: white;
+    margin-right: 0.5rem;
+}
+.navbar .first-bar input{  
+    margin-right: 0.5rem;
+}
+#site-header > nav > section > div.first-bar > a:nth-child(1){
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.navbar .first-bar form{
+    display: flex;
+    align-items: center;
+}
+.navbar .second-bar ul{
+    display: flex;
+    align-items: center;
+}
+.navbar .second-bar ul li{
+    margin-right: 0.5rem;
+}
+.navbar-anonymous ul{
+    display: flex;
+}
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #eff4f4;
+  background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23bae6f2' fill-opacity='0.49' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.basic {
+  background-size: cover;
+  height: 85vh;
+  position: relative;
+  overflow: hidden;
+}
+
+
+#container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0;
+}
+
+#site-content>section.basic {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.login form,
+.register form,
+.create form {
+  margin: 5rem auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.button {
+  display: block;
+  padding: 0.6rem 1rem;
+  border-radius: 0.4rem;
+  text-decoration: none;
+  font-weight: bold;
+  background: cadetblue;
+  color: rgb(255, 255, 255);
+  border: none;
+  font-size: 1rem;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+li {
+  list-style-type: none;
+}
+
+.fa-heart {
+  color: red;
+}
+
+.img {
+  width: 15rem;
+  position: relative;
+  overflow: hidden;
+  padding: 0rem;
+}
+
+img {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.img::after {
+  display: block;
+  content: "";
+  padding-top: 100%;
+}
+
+.detailsOtherPet,
+.detailsMyPet,
+.deletePet,
+.otherPet,
+.myPet {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.detailsMyPet>p:nth-child(2),
+.deletePet>p:nth-child(2),
+.otherPet>p:nth-child(2),
+.myPet>p:nth-child(2) {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.dashboard>nav>ul {
+  display: flex;
+
+}
+
+.dashboard>nav>ul li:not(:last-child) {
+  padding-right: 1rem;
+}
+
+.dashboard .navbar {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.basic h1,
+.my-pets h1,
+.dashboard h1 {
+  text-align: center;
+  margin: 0rem;
+  padding: 2rem 0 1rem 0;
+}
+
+h3 {
+  margin-bottom: 0;
+}
+
+.pet-info {
+  padding-bottom: 1rem;
+}
+
+.deletePet>form,
+.detailsMyPet>form {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+}
+
+.my-pets .my-pets-list,
+.dashboard .other-pets-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.detailsMyPet textarea,
+.my-pets textarea {
+  margin-bottom: 2rem;
+}
+
+footer {
+  margin-top: auto;
+  text-align: center;
+  background: #234465;
+}
+
+footer p {
+  padding: 1rem 0;
+  font-weight: bold;
+  margin: 0rem;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+#notifications {
+  float: right;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  text-align: center;
+  margin: 1em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.notification {
+  font-size: 1.5em;
+  color: #ffffff;
+  display: none;
+  text-align: right;
+}
+
+.notification>span {
+  display: inline-block;
+  padding: 0.5em 2em 0.5em 2em;
+  border-radius: 10px;
+}
+
+#loadingBox>span {
+  background: #7CB3E9;
+}
+
+#infoBox>span {
+  background: #393;
+}
+
+#errorBox>span {
+  background: #F50;
 }

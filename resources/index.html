@@ -1,0 +1,196 @@
+<main id="site-content">
+    <section class="basic">
+        <h1> Welcome to pet my pet!</h1>
+    </section>
+    <section class="login">
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Login</legend>
+                <p class="field">
+                    <label for="username">Username</label>
+                    <span class="input">
+                        <input type="text" name="username" id="username" placeholder="Username" />
+                        <span class="actions"></span>
+                        <i class="fas fa-user"></i>
+                    </span>
+                </p>
+                <p class="field">
+                    <label for="password">Password</label>
+                    <span class="input">
+                        <input type="password" name="password" id="password" placeholder="Password" />
+                        <span class="actions"></span>
+                        <i class="fas fa-key"></i>
+                    </span>
+                </p>
+                <input class="button" type="submit" class="submit" value="Login" />
+            </fieldset>
+        </form>
+    </section>
+    <section class="register">
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Register</legend>
+                <p class="field">
+                    <label for="username">Username</label>
+                    <span class="input">
+                        <input type="text" name="username" id="username" placeholder="Username" />
+                        <span class="actions"></span>
+                        <i class="fas fa-user"></i>
+                    </span>
+                </p>
+                <p class="field">
+                    <label for="password">Password</label>
+                    <span class="input">
+                        <input type="password" name="password" id="password" placeholder="Password" />
+                        <span class="actions"></span>
+                        <i class="fas fa-key"></i>
+                    </span>
+                </p>
+                <input class="button" type="submit" class="submit" value="Register" />
+            </fieldset>
+        </form>
+    </section>
+    <section class="create">
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Add new Pet</legend>
+                <p class="field">
+                    <label for="name">Name</label>
+                    <span class="input">
+                        <input type="text" name="name" id="name" placeholder="Name" />
+                        <span class="actions"></span>
+                    </span>
+                </p>
+                <p class="field">
+                    <label for="description">Description</label>
+                    <span class="input">
+                        <textarea rows="4" cols="45" type="text" name="description" id="description"
+                            placeholder="Description"></textarea>
+                        <span class="actions"></span>
+                    </span>
+                </p>
+                <p class="field">
+                    <label for="image">Image</label>
+                    <span class="input">
+                        <input type="text" name="imageURL" id="image" placeholder="Image" />
+                        <span class="actions"></span>
+                    </span>
+                </p>
+                <p class="field">
+                    <label for="category">Category</label>
+                    <span class="input">
+                        <select type="text" name="category">
+                            <option>Cat</option>
+                            <option>Dog</option>
+                            <option>Parrot</option>
+                            <option>Reptile</option>
+                            <option>Other</option>
+                        </select>
+                        <span class="actions"></span>
+                    </span>
+                </p>
+                <input class="button" type="submit" class="submit" value="Add Pet" />
+            </fieldset>
+        </form>
+    </section>
+    <section class="myPet">
+        <h3>Name: Pesho</h3>
+        <p>Category: Cat</p>
+        <p class="img"><img src="http://pngimg.com/uploads/cat/cat_PNG50491.png"></p>
+        <p class="description">This is my cat Pesho</p>
+        <div class="pet-info">
+            <a href="#"><button class="button">Edit</button></a>
+            <a href="#"><button class="button">Delete</button></a>
+            <i class="fas fa-heart"></i> <span>5</span>
+        </div>
+    </section>
+    <section class="otherPet">
+        <h3>Name: Gosho</h3>
+        <p>Category: Cat</p>
+        <p class="img"><img src="https://pics.clipartpng.com/Cat_PNG_Clip_Art-2580.png"></p>
+        <p class="description">This is not my cat Gosho</p>
+        <div class="pet-info">
+            <a href="#"><button class="button"><i class="fas fa-heart"></i> Pet</button></a>
+            <a href="#"><button class="button">Details</button></a>
+            <i class="fas fa-heart"></i> <span> 2</span>
+        </div>
+    </section>
+    <section class="deletePet">
+        <h3>Pesho</h3>
+        <p>Pet counter: <i class="fas fa-heart"></i> 5</p>
+        <p class="img"><img src="http://pngimg.com/uploads/cat/cat_PNG50491.png"></p>
+        <form action="#" method="POST">
+            <p class="description">This is my cat Pesho</p>
+            <button class="button">Delete</button>
+        </form>
+    </section>
+    <section class="detailsMyPet">
+        <h3>Koko</h3>
+        <p>Pet counter: <i class="fas fa-heart"></i> 6</p>
+        <p class="img"><img src="https://www.freepngimg.com/thumb/parrot/2-parrot-png-images-download-thumb.png">
+        </p>
+        <form action="#" method="POST">
+            <textarea type="text" name="description">This is my parrot Koko</textarea>
+            <button class="button"> Save</button>
+        </form>
+    </section>
+    <section class="detailsOtherPet">
+        <h3>Spirit</h3>
+        <p>Pet counter: 7 <a href="#"><button class="button"><i class="fas fa-heart"></i>
+                    Pet</button></a>
+        </p>
+        <p class="img"><img src="http://pngimg.com/uploads/horse/horse_PNG321.png"></p>
+        <p class="description">This is my horse Spirit</p>
+    </section>
+    
+    <section class="my-pets">
+        <h1>My Pets</h1>
+        <ul class="my-pets-list">
+            <section class="myPet">
+                <h3>Name: Pesho</h3>
+                <p>Category: Cat</p>
+                <p class="img"><img src="http://pngimg.com/uploads/cat/cat_PNG50491.png"></p>
+                <p class="description">This is my cat Pesho</p>
+                <div class="pet-info">
+                    <a href="#"><button class="button">Details</button></a>
+                    <a href="#"><button class="button">Delete</button></a>
+                    <i class="fas fa-heart"></i> <span>5</span>
+                </div>
+            </section>
+            <section class="myPet">
+                <h3>Name: Pesho</h3>
+                <p>Category: Cat</p>
+                <p class="img"><img src="http://pngimg.com/uploads/cat/cat_PNG50491.png"></p>
+                <p class="description">This is my cat Pesho</p>
+                <div class="pet-info">
+                    <a href="#"><button class="button">Details</button></a>
+                    <a href="#"><button class="button">Delete</button></a>
+                    <i class="fas fa-heart"></i> <span>5</span>
+                </div>
+            </section>
+            <section class="myPet">
+                <h3>Name: Pesho</h3>
+                <p>Category: Cat</p>
+                <p class="img"><img src="http://pngimg.com/uploads/cat/cat_PNG50491.png"></p>
+                <p class="description">This is my cat Pesho</p>
+                <div class="pet-info">
+                    <a href="#"><button class="button">Details</button></a>
+                    <a href="#"><button class="button">Delete</button></a>
+                    <i class="fas fa-heart"></i> <span>5</span>
+                </div>
+            </section>
+        </ul>
+    </section>
+</main>
+
+<div id="notifications">
+    <div id="loadingBox" class="notification">
+        <span>Loading …</span>
+    </div>
+    <div id="infoBox" class="notification">
+        <span>Info</span>
+    </div>
+    <div id="errorBox" class="notification">
+        <span>Error</span>
+    </div>
+</div>
