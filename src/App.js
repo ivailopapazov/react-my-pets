@@ -8,7 +8,6 @@ import EditPetDetails from './components/EditPetDetails/EditPetDetails';
 import EditPet from './components/EditPet/EditPet';
 import CreatePet from './components/CreatePet/CreatePet';
 import DemoPage from './components/Demo';
-import DemoFuncPage from './components/DemoFunc';
 import './App.css';
 
 function App() {
@@ -25,7 +24,6 @@ function App() {
           <Route path="/pets/:petId/edit" component={EditPet} />
 
           <Route path="/demo" component={DemoPage} />
-          <Route path="/demo-func" component={DemoFuncPage} />
         </Switch>
         
         <Footer />
