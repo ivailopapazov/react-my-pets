@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, withRouter } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 
-const Demo = () => {
+const Demo = ({history}) => {
     // const [state, setState] = useState({
     //     count: 11,
     //     step: 1,
@@ -18,11 +18,13 @@ const Demo = () => {
     //     fetch(`https://swapi.dev/api/people/${step}`)
     //         .then(res => res.json())
     //         .then(result => setCharacter(result))
-
-    //     return () => {
-    //         console.log('ComponentWillUnmount');
-    //     }
     // }, [step]);
+
+    useEffect(() => {
+        return () => {
+            console.log('ComponentWillUnmout')            
+        }
+    }, []);
 
     const onCounterButtonClickHandler = () => {
         // setState(oldState => ({...oldState, count: oldState.count + oldState.step}));
