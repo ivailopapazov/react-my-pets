@@ -1,6 +1,32 @@
+import { auth } from '../../utils/firebase';
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react';
 
-const Header = () => {
+const Header = ({
+    isAuthenticated,
+    username,
+}) => {
+    useEffect(() => {
+        if (!isAuthenticated) {
+            return;
+        }
+
+        auth.currentUser.getIdToken()
+            .then(function (idToken) {
+                return fetch('http://localhost:5001', {
+                    headers: {
+                        'Authorization': idToken
+                    }
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            });
+
+
+    }, [isAuthenticated])
+
     return (
         <>
             <header id="site-header">
@@ -13,20 +39,24 @@ const Header = () => {
                         </div>
                         <div className="second-bar">
                             <ul>
-                                <li>Welcome, Pesho!</li>
-                                <li><a href="#"><i className="fas fa-sign-out-alt"></i> Logout</a></li>
+                                {isAuthenticated
+                                    ? <li>Welcome, {username}!</li>
+                                    : <li>Welcome, Guest</li>
+                                }
+
+                                <li><Link to="/logout"><i className="fas fa-sign-out-alt"></i> Logout</Link></li>
                             </ul>
                         </div>
                     </section>
                     <section className="navbar-anonymous">
                         <ul>
-                            <li><a href="#"><i className="fas fa-user-plus"></i> Register</a></li>
-                            <li><a href="#"><i className="fas fa-sign-in-alt"></i> Login</a></li>
+                            <li><Link to="/register"><i className="fas fa-user-plus"></i> Register</Link></li>
+                            <li><Link to="/login"><i className="fas fa-sign-in-alt"></i> Login</Link></li>
                         </ul>
                     </section>
                 </nav>
             </header>
-            
+
         </>
     );
 };

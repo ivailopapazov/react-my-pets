@@ -12,7 +12,7 @@ const CategoryNavigation = () => {
                 <li><NavLink to="/categories/Other">Other</NavLink></li>
             </ul>
 
-            <style jsx>{`
+            <style>{`
                 .active {
                     background-color: lightgreen !important;
                 }
