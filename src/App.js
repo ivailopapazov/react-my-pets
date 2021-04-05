@@ -10,6 +10,7 @@ import EditPetDetails from './components/EditPetDetails/EditPetDetails';
 import EditPet from './components/EditPet/EditPet';
 import CreatePet from './components/CreatePet/CreatePet';
 import DemoPage from './components/Demo';
+import AdvancedTechniques from './components/AdvancedTechniques/AdvancedTechniques';
 import { auth } from './utils/firebase';
 import './App.css';
 import { useEffect, useState } from 'react';
@@ -45,6 +46,7 @@ function App() {
         }} />
 
         <Route path="/demo" component={DemoPage} />
+        <Route path="/advanced-techniques" component={AdvancedTechniques} />
       </Switch>
 
       <Footer />
