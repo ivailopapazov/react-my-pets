@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import * as petsService from '../../services/petsService';
 
 const Pet = ({
     id,
@@ -7,8 +8,8 @@ const Pet = ({
     imageURL,
     category,
     likes,
+    onPetButtonClickHander,
 }) => {
-
     return (
         <li className="otherPet">
             <h3>Name: {name}</h3>
@@ -16,9 +17,11 @@ const Pet = ({
             <p className="img"><img src={imageURL} /></p>
             <p className="description">{description}</p>
             <div className="pet-info">
-                <Link to="#"><button className="button"><i className="fas fa-heart"></i> Pet</button></Link>
+                <button className="button" onClick={onPetButtonClickHander}>
+                    <i className="fas fa-heart"></i>Pet
+                </button>
                 <Link to={`/pets/details/${id}`}><button className="button">Details</button></Link>
-                <i className="fas fa-heart"></i> <span> {likes}</span>
+                <i className="fas fa-heart"></i><span>{likes}</span>
             </div>
         </li>
     );

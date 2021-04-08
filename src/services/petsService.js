@@ -5,6 +5,7 @@ export const getAll = (category = '') => {
 
     return fetch(petsUrl)
         .then(res => res.json())
+        .then(pets => pets.map(x => ({...x, likes: Number(x.likes)})))
         .catch(error => console.log(error));
 };
 
