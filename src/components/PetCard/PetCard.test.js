@@ -2,6 +2,9 @@ import { BrowserRouter } from 'react-router-dom';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 
 import PetCard from './PetCard';
+import * as petsService from '../../services/petsService';
+
+jest.mock('../../services/petsService');
 
 describe('PetCard Component', () => {
     it('Should display name', () => {
@@ -15,6 +18,8 @@ describe('PetCard Component', () => {
     });
 
     it('Should increase likes when pet button is pressed', async () => {
+        petsService.pet.mockResolvedValue({likes: 6});
+
         render(
             <BrowserRouter>
                 <PetCard likes={5} />

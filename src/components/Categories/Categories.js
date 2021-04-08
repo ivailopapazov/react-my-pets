@@ -33,15 +33,6 @@ class Categories extends Component {
             })
     }
 
-    onPetButtonClickHander(petId, likes) {
-        petsService.pet(petId, likes + 1)
-            .then((result) => {
-                console.log(result);
-                this.setState(state => ({pets: state.pets.map(x => x.id == petId ? {...x, likes: result.likes} : x)}))
-            })
-
-    }
-
     render() {
         return (
             <div className="dashboard">
@@ -51,7 +42,7 @@ class Categories extends Component {
 
                 <ul className="other-pets-list">
                     {this.state.pets.map(x => 
-                        <PetCard key={x.id} {...x} onPetButtonClickHander={this.onPetButtonClickHander.bind(this, x.id, x.likes)}/>
+                        <PetCard key={x.id} {...x} />
                     )}
                 </ul>
             </div>

@@ -2,6 +2,7 @@ import { Component } from 'react';
 
 import * as petsService from '../../services/petsService';
 import PetFormView from '../PetFormView/PetFormView';
+import isAuth from '../../hoc/isAuth';
 
 class EditPet extends Component {
     constructor(props) {
@@ -33,4 +34,4 @@ class EditPet extends Component {
     };
 };
 
-export default EditPet;
+export default isAuth(EditPet);

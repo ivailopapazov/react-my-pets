@@ -1,11 +1,11 @@
 import { auth } from '../../utils/firebase';
 import { Link } from 'react-router-dom'
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
+import AuthContext from '../../contexts/AuthContext';
 
-const Header = ({
-    isAuthenticated,
-    username,
-}) => {
+const Header = () => {
+    const {isAuthenticated, username} = useContext(AuthContext);
+    
     useEffect(() => {
         if (!isAuthenticated) {
             return;
